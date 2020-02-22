@@ -3,11 +3,9 @@
 This is a idea for auto match of chicken embryos 3D images. I do not have the medical knowledge and backgrounds so some parts of it include more details of terms and notions.
 
 
-## 1.Problem Statements
+## 1.Problem Statement
 
-The research is about to analysis the cardiac development under the influence of different genes. The process from CT to 3D has been done and our task is to rotate or say registrate the images to keep its consistent orentation of the heart so that the pathologists will find it easier to analyze the phenotype of the egg. The challenge is that the embroyo's 3D images are develop with it grows and the embryos can move in the egg so that the 3D match objects are not the same in each stage.
-
-![the development of embryo](https://www.researchgate.net/profile/Maria_Sandoval23/publication/260764808/figure/fig2/AS:669257205571587@1536574760268/Stages-of-mid-stage-embryonic-development-of-Columba-livia-Scale-2-mm.png)
+The research is about to analysis the cardiac development under the influence of different genes. The process from CT to 3D has been done and our task is to rotate or say registrate the images to keep its consistent orentation of the heart so that the pathologists will find it easier to analyze the phenotype of the egg. The challenge is that the embroyo's 3D images are develop with it grows and the embryos can move in the egg so that the 3D match objects are not the same in each stage.(more specific details of its movement and development can be seen in <a href="#1" >[1]</a>  )
 
 
 ### 1.1 Some explanation of the items
@@ -33,7 +31,7 @@ Some couples of images, one is the original image, and the other is the processe
 
 #### (2) The impact of motion artifacts and other artifacts has been reduced. 
 
-([[1]](https://www.researchgate.net/publication/44677254_Motion-Artifact-Free_In_Vivo_Imaging_Utilizing_Narcotized_Avian_Embryos_In_Ovo) has demonstrate how the motion artifact influence our images)
+(<a href="#2" >[2]</a> has demonstrate how the motion artifact influence our images)
 
 #### (3) The chicken embryos are in Ovo and in vivo
 
@@ -45,10 +43,8 @@ according to the question, they need to determine phenotype of each egg
 It means the labeled data cover the whole developmenet process of the embryo. Because the phenotype of chicken embryos changed dramatically if we lost some stages of this development, it may cause error with the use of labeled data. Also, we can consider the labeled data as ground truth (the labeled data has been filtraded).
 
 #### (5) The missing data, error images have been removed. (all data is valid)
-Just to make this question more spefific and only focus on the algorithms (in actual industrial field, it is often the case to have error input data). If the data has not been prepocessing, we can just write some scripts to check and select the valid data
+Just to make this question more spefific and only focus on the algorithms (in actual industrial field, it is often the case to have error input data). If the data has not been prepocessing, we can just write some scripts to check and select the valid data.
 
-
- 
 ## 3.Process
 
 ### 3.1.Reading 3D Images
@@ -66,16 +62,27 @@ There are a lot of types of medical images as dcm，nii.gz，nrrd，mha，mhd.
 
 algorithm ideas:
 
-### 4.Sample analysis
+## 4.Sample analysis
 
 
 
-## Reference
 
-[1] [Motion-Artifact-Free In Vivo Imaging Utilizing Narcotized Avian Embryos In Ovo](https://www.researchgate.net/publication/44677254_Motion-Artifact-Free_In_Vivo_Imaging_Utilizing_Narcotized_Avian_Embryos_In_Ovo)
-
-[2] [Quantitative Three-DimensionalAnalysis of Embryonic ChickMorphogenesis Via MicrocomputedTomography](https://anatomypubs.onlinelibrary.wiley.com/doi/pdf/10.1002/ar.21276)
+## 5.Conclusion
 
 
-[3] [Automated Segmentation and Object Classification ofCT Images: Application toIn VivoMolecular Imaging ofAvian Embryos](http://downloads.hindawi.com/journals/ijbi/2013/508474.pdf)
 
+
+## 6.Other discussion
+
+Last year, kaggle has a competition [RSNA Intracranial Hemorrhage Detection](https://www.kaggle.com/c/rsna-intracranial-hemorrhage-detection/) that use the 3D images to build an algorithm to detect acute intracranial hemorrhage. I do not resaerch more about the types of heart disease and mutation. But maybe the presence and degree of cardiac abnormalities can also be labeled and we can directly use these and machine learning method to process more images.
+
+## 7.Reference
+
+<a id="1"/> 1.[Embryonic development of Columba livia(Aves: Columbiformes) from an altricial-precocial perspective](https://www.researchgate.net/publication/260764808_Embryonic_development_of_Columba_liviaAves_Columbiformes_from_an_altricial-precocial_perspective)
+
+<a id="2"/> 2.[Motion-Artifact-Free In Vivo Imaging Utilizing Narcotized Avian Embryos In Ovo](https://www.researchgate.net/publication/44677254_Motion-Artifact-Free_In_Vivo_Imaging_Utilizing_Narcotized_Avian_Embryos_In_Ovo)
+
+
+<a id="3"/> 3.[Quantitative Three-DimensionalAnalysis of Embryonic ChickMorphogenesis Via MicrocomputedTomography](https://anatomypubs.onlinelibrary.wiley.com/doi/pdf/10.1002/ar.21276)
+
+<a id="4"/> 4.[Automated Segmentation and Object Classification ofCT Images: Application toIn VivoMolecular Imaging ofAvian Embryos](http://downloads.hindawi.com/journals/ijbi/2013/508474.pdf)
