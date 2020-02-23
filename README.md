@@ -65,22 +65,23 @@ If the images are not as perfect as our assumptions, we need to clean and recons
 
 ##### Deal with 3D Images
 
-There are usually two ways to deal with 3D detection problem. Firstly we can reconstruct from the depth images to 3D structures or we use 
+There are usually two ways to deal with 3D detection problem. Firstly we can reconstruct from the 3T images to 3D structures or we use only the 2D features and put it in our network.
 
-###### (1) object reconstruction
+##### (1) object reconstruction
 
 In the problem description, they get the resulting 3d images and then do some rotations. We can use many tools with a lot of reconstruction algorithms to build the 3D images, such as the ASTRA Toolbox. Or, as there are a lot of types of medical images as dcm，nii.gz，nrrd，mha，mhd and we use dcm pydicom to get access to dcm data and itk to process it. Also, we can get the rotation information by calculate the rotation matrix from the orignal images and processed images 
 
-###### (2) using 2D features.
+##### (2) using 2D features.
 
 According to this paper [Is 2D Information Enough For ViewpointEstimation?](http://www.bmva.org/bmvc/2014/files/paper048.pdf), we can also explore for our specific case, whether it's better to only use the 3T slices.
 
 ##### Output Form
 
-###### (1) 3D Orientation
+##### (1) 3D Orientation
 yaw, pitch, and roll, then we can use the pose to correct our 3D images to the right and consistent orientation.
 
-###### (2) rotated view
+##### (2) rotated view
+
 3D images(it may not be very practical)
 
 #### 3.1.3 Data Augmentation
@@ -89,7 +90,7 @@ It depends on our demand and the quality of data.
 
 #### 3.1.4 Background Segementation
 
-Because the position of the heart in the embryo can change and not proper to match the whole 3D image of the embryo, therefore we can try to analyze the performance that extract or partition the cardiac part and then match it.
+Because the position of the heart in the embryo can change and not proper to match the whole 3D image of the embryo, therefore we can try to analyze the performance that extract or partition the cardiac part and then match it. (Matlab also has the segementation toolbox)
 
 ### Related Work
 [RotNet](https://github.com/d4nst/RotNet): application on 2D rotation correctness (CNN)
@@ -97,7 +98,7 @@ Because the position of the heart in the embryo can change and not proper to mat
 
 I don't do relevant work about medical data before, because the network should be fit to the case, I find that U-Net is quite popular in Biomedical field, maybe we can start at it as a baseline. [U-Net: Convolutional Networks for BiomedicalImage Segmentation](https://arxiv.org/pdf/1505.04597.pdf)
 
-### 3.3 Train and tune the model
+### 3.3 Train and Tune the Model
 
 The strategies that should be used really depends. Firstly we need to see the performance of the it using pretrained model and then figure out how to tune the parameters or revise the network.
 
