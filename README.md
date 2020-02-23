@@ -67,20 +67,20 @@ If the images are not as perfect as our assumptions, we need to clean and recons
 
 There are usually two ways to deal with 3D detection problem. Firstly we can reconstruct from the depth images to 3D structures or we use 
 
-- (1) object reconstruction
+###### (1) object reconstruction
 
 In the problem description, they get the resulting 3d images and then do some rotations. We can use many tools with a lot of reconstruction algorithms to build the 3D images, such as the ASTRA Toolbox. Or, as there are a lot of types of medical images as dcm，nii.gz，nrrd，mha，mhd and we use dcm pydicom to get access to dcm data and itk to process it. Also, we can get the rotation information by calculate the rotation matrix from the orignal images and processed images 
 
-- (2) using 2D features.
+###### (2) using 2D features.
 
 According to this paper [Is 2D Information Enough For ViewpointEstimation?](http://www.bmva.org/bmvc/2014/files/paper048.pdf), we can also explore for our specific case, whether it's better to only use the 3T slices.
 
 ##### Output Form
 
-- (1) 3D Orientation
+###### (1) 3D Orientation
 yaw, pitch, and roll, then we can use the pose to correct our 3D images to the right and consistent orientation.
 
-- (2) rotated view
+###### (2) rotated view
 3D images(it may not be very practical)
 
 #### 3.1.3 Data Augmentation
